@@ -1,0 +1,64 @@
+
+.container {
+    padding-top: 2rem;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+
+    h2 {
+        font-weight: bold;
+        color: #3f51b5; // MUI primary color
+    }
+
+    .hero-image {
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.card {
+    transition: transform 0.2s, box-shadow 0.2s;
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.feature-title {
+    color: #3f51b5; // MUI primary color
+    font-weight: bold;
+}
+
+.feature-description {
+    color: #666; // A lighter color for description
+}
+
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fadeInUp {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+  }
+  
+  .fadeInUp:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+  
+  .fadeInUp:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+  

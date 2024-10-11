@@ -1,0 +1,121 @@
+.container {
+  display: flex;
+  align-items: flex-start;
+  padding: 40px;
+  background-color: #f0f4f8; // Light background for the whole section
+  animation: fadeIn 0.5s ease-in-out;
+  margin: 10px 0px 10px 0px;
+  border-radius: 20px;
+}
+
+.recommendations {
+  width: 40%; // Left side width
+  padding: 20px;
+  background-color: #ffffff; // White background for contrast
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-right: 20px; // Space between sections
+  animation: slideInLeft 0.5s ease-in-out;
+}
+
+.registrationForm {
+  width: 50%; // Right side width
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff; // White background
+  animation: slideInRight 0.5s ease-in-out;
+}
+
+.title {
+  text-align: center !important;
+  font-weight: bold !important;
+  margin-bottom: 20px !important;
+  color: #333;
+}
+
+.avatarContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.field {
+  margin-bottom: 20px !important;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.submitButton {
+  background-color: #007BFF;
+  &:hover {
+      background-color: #0056b3;
+  }
+}
+
+.cancelButton {
+  color: #555;
+}
+
+.recommendationTitle {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.recommendationList {
+  list-style: none;
+  padding-left: 0;
+}
+
+.recommendationList li {
+  margin-bottom: 10px;
+  animation: fadeInUp 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+      opacity: 0;
+      transform: translateX(-30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+      opacity: 0;
+      transform: translateX(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}

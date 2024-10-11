@@ -1,0 +1,87 @@
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+      opacity: 0;
+      transform: translateX(-30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+      opacity: 0;
+      transform: translateX(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.root {
+  width: 400px;
+  padding: 50px;
+  border: 1px solid #dedede;
+  margin: 50px auto;
+  background-color: #f9f9f9; /* Add a subtle background color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+  opacity: 0; /* Start hidden */
+  animation: fadeIn 0.5s forwards; /* Trigger fade-in animation */
+}
+
+.field {
+  margin-bottom: 20px !important;
+}
+
+.title {
+  text-align: center !important;
+  font-weight: bold !important;
+  margin-bottom: 10px !important; /* Reduced margin for better spacing */
+}
+
+.subtitle {
+  text-align: center;
+  color: #555; /* Darker text for the subtitle */
+  margin-bottom: 30px;
+}
+
+.forgotPassword {
+  text-align: center;
+  margin-top: 10px; /* Space between the button and text */
+  font-size: 0.9rem; /* Slightly smaller text */
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px; /* Space above the footer */
+  font-size: 0.9rem; /* Slightly smaller text */
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s forwards; /* Fade in effect when the component mounts */
+}

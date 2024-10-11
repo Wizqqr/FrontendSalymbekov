@@ -1,0 +1,237 @@
+.header {
+  background: linear-gradient(90deg, #3a6073, #16222a);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1130px;
+  margin: 0 auto;
+  padding: 0 20px; /* Добавляем внутренний отступ */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  img {
+    width: 120px; /* уменьшаем размер логотипа для телефонов */
+    height: auto;
+  }
+
+  .brandText {
+    margin-left: 12px;
+
+    h1 {
+      font-size: 1.4rem; /* уменьшаем шрифт для мобильных устройств */
+      font-weight: bold;
+      margin: 0;
+      color: #fff;
+    }
+
+    p {
+      font-size: 0.8rem;
+      font-style: italic;
+      margin: 0;
+      color: #f1f1f1;
+    }
+
+    // Скрываем текст на мобильных
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+.navbar {
+  display: flex;
+  gap: 25px;
+
+  .navItem {
+    font-size: 0.9rem;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #00adb5;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #00adb5;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover::before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.authActions {
+  display: flex;
+  align-items: center;
+  margin-left: 20px; /* Добавляем отступ слева для аватара */
+}
+
+.userMenu .avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.guestActions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #00adb5;
+    }
+  }
+
+  .signupBtn {
+    background-color: #00adb5;
+    padding: 8px 18px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #007b82;
+    }
+  }
+}
+
+.userMenu {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .avatarContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    .avatar {
+      width: 70px;
+      height: 60px;
+      border-radius: 50%;
+      margin-right: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+      border: 2px solid transparent;
+
+      /* Subtle glowing effect on hover */
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        border: 2px solid rgba(0, 123, 255, 0.6);
+      }
+    }
+  }
+
+  .userDropdown {
+    position: absolute;
+    top: 58px;
+    right: 0;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    display: none;
+    flex-direction: column;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    span {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #333;
+    }
+
+    a,
+    button {
+      margin-top: 10px;
+      padding: 10px;
+      color: #007bff;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      background-color: transparent;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      display: inline-block;
+
+      &:hover {
+        background-color: rgba(0, 123, 255, 0.1);
+        color: #0056b3;
+      }
+    }
+
+    button {
+      padding: 10px;
+    }
+  }
+
+  &:hover .userDropdown {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+}
+
+/* Медиазапрос для телефонов */
+@media (max-width: 768px) {
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Устанавливаем ширину на 100% */
+    padding: 0 10px; /* Добавляем немного отступа */
+  }
+
+  .logo {
+    margin-right: auto; /* Это заставит логотип сдвинуться влево */
+  }
+
+  .authActions {
+    margin-left: auto; /* Это заставит профиль сдвинуться вправо */
+  }
+
+  .navbar {
+    display: none; /* Скрываем меню на мобильных */
+  }
+
+  .userMenu .avatar {
+    width: 40px;
+    height: 40px; /* уменьшенный размер аватара */
+  }
+}
+
